@@ -1,2 +1,10 @@
+poslovnedomaci\data\PodesavanjePretrage.class
 poslovnedomaci\data\Korisnik.class
+poslovnedomaci\data\Pretraga.class
 poslovnedomaci\exception\DomaciException.class
+poslovnedomaci\service\KorisnikService.class
+poslovnedomaci\dao\ResourcesManager.class
+poslovnedomaci\data\Proizvod.class
+poslovnedomaci\data\Kupovina.class
+poslovnedomaci\rest\KorisnikRest.class
+poslovnedomaci\dao\KorisnikDao.class

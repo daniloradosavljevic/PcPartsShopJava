@@ -11,16 +11,16 @@ package poslovnedomaci.data;
  */
 public class Kupovina {
     private int kupovina_id;
-    private int korisnik_id;
-    private int proizvod_id;
+    private Korisnik korisnik_id;
+    private Proizvod proizvod_id;
 
-    public Kupovina(int kupovina_id, int korisnik_id, int proizvod_id) {
+    public Kupovina(int kupovina_id, Korisnik korisnik_id, Proizvod proizvod_id) {
         this.kupovina_id = kupovina_id;
         this.korisnik_id = korisnik_id;
         this.proizvod_id = proizvod_id;
     }
 
-    public Kupovina(int korisnik_id, int proizvod_id) {
+    public Kupovina(Korisnik korisnik_id, Proizvod proizvod_id) {
         this.korisnik_id = korisnik_id;
         this.proizvod_id = proizvod_id;
     }
@@ -37,19 +37,19 @@ public class Kupovina {
         this.kupovina_id = kupovina_id;
     }
 
-    public int getKorisnik_id() {
+    public Korisnik getKorisnik_id() {
         return korisnik_id;
     }
 
-    public void setKorisnik_id(int korisnik_id) {
+    public void setKorisnik_id(Korisnik korisnik_id) {
         this.korisnik_id = korisnik_id;
     }
 
-    public int getProizvod_id() {
+    public Proizvod getProizvod_id() {
         return proizvod_id;
     }
 
-    public void setProizvod_id(int proizvod_id) {
+    public void setProizvod_id(Proizvod proizvod_id) {
         this.proizvod_id = proizvod_id;
     }
 

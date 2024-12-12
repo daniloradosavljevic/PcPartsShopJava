@@ -10,74 +10,50 @@ package poslovnedomaci.data;
  * @author Coda
  */
 public class Pretraga {
-    private int proizvod_id;
-    private String naziv;
-    private int cena;
-    private String vrsta_opreme;
-    private int stanje_na_lageru;
+   private int pretraga_id;
+   private Korisnik korisnik_id;
+   private PodesavanjePretrage podesavanje_pretrage_id;
 
-    public Pretraga(int proizvod_id, String naziv, int cena, String vrsta_opreme, int stanje_na_lageru) {
-        this.proizvod_id = proizvod_id;
-        this.naziv = naziv;
-        this.cena = cena;
-        this.vrsta_opreme = vrsta_opreme;
-        this.stanje_na_lageru = stanje_na_lageru;
+    public Pretraga(int pretraga_id, Korisnik korisnik_id, PodesavanjePretrage podesavanje_pretrage_id) {
+        this.pretraga_id = pretraga_id;
+        this.korisnik_id = korisnik_id;
+        this.podesavanje_pretrage_id = podesavanje_pretrage_id;
     }
 
-    public Pretraga(String naziv, int cena, String vrsta_opreme, int stanje_na_lageru) {
-        this.naziv = naziv;
-        this.cena = cena;
-        this.vrsta_opreme = vrsta_opreme;
-        this.stanje_na_lageru = stanje_na_lageru;
+    public Pretraga(Korisnik korisnik_id, PodesavanjePretrage podesavanje_pretrage_id) {
+        this.korisnik_id = korisnik_id;
+        this.podesavanje_pretrage_id = podesavanje_pretrage_id;
     }
 
     public Pretraga() {
     }
-    
-    
-    public int getProizvod_id() {
-        return proizvod_id;
+
+    public int getPretraga_id() {
+        return pretraga_id;
     }
 
-    public void setProizvod_id(int proizvod_id) {
-        this.proizvod_id = proizvod_id;
+    public void setPretraga_id(int pretraga_id) {
+        this.pretraga_id = pretraga_id;
     }
 
-    public String getNaziv() {
-        return naziv;
+    public Korisnik getKorisnik_id() {
+        return korisnik_id;
     }
 
-    public void setNaziv(String naziv) {
-        this.naziv = naziv;
+    public void setKorisnik_id(Korisnik korisnik_id) {
+        this.korisnik_id = korisnik_id;
     }
 
-    public int getCena() {
-        return cena;
+    public PodesavanjePretrage getPodesavanje_pretrage_id() {
+        return podesavanje_pretrage_id;
     }
 
-    public void setCena(int cena) {
-        this.cena = cena;
-    }
-
-    public String getVrsta_opreme() {
-        return vrsta_opreme;
-    }
-
-    public void setVrsta_opreme(String vrsta_opreme) {
-        this.vrsta_opreme = vrsta_opreme;
-    }
-
-    public int getStanje_na_lageru() {
-        return stanje_na_lageru;
-    }
-
-    public void setStanje_na_lageru(int stanje_na_lageru) {
-        this.stanje_na_lageru = stanje_na_lageru;
+    public void setPodesavanje_pretrage_id(PodesavanjePretrage podesavanje_pretrage_id) {
+        this.podesavanje_pretrage_id = podesavanje_pretrage_id;
     }
 
     @Override
     public String toString() {
-        return "Pretraga{" + "proizvod_id=" + proizvod_id + ", naziv=" + naziv + ", cena=" + cena + ", vrsta_opreme=" + vrsta_opreme + ", stanje_na_lageru=" + stanje_na_lageru + '}';
+        return "Pretraga{" + "pretraga_id=" + pretraga_id + ", korisnik_id=" + korisnik_id + ", podesavanje_pretrage_id=" + podesavanje_pretrage_id + '}';
     }
-    
 }
