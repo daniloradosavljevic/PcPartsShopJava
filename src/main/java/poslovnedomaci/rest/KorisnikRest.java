@@ -55,8 +55,6 @@ public class KorisnikRest {
         }
         return Response.status(Response.Status.UNAUTHORIZED).entity("Invalid username or password").build();
     }
-
-
     
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)

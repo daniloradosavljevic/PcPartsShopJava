@@ -7,9 +7,11 @@ package poslovnedomaci.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 import poslovnedomaci.dao.KorisnikDao;
 import poslovnedomaci.dao.ResourcesManager;
 import poslovnedomaci.data.Korisnik;
+import poslovnedomaci.data.Proizvod;
 import poslovnedomaci.exception.DomaciException;
 
 /**
@@ -18,7 +20,7 @@ import poslovnedomaci.exception.DomaciException;
  */
 public class KorisnikService {
     
-     private static final KorisnikService instance = new KorisnikService();
+    private static final KorisnikService instance = new KorisnikService();
 
     private KorisnikService() {
     }
@@ -68,6 +70,6 @@ public class KorisnikService {
         } finally {
             ResourcesManager.closeConnection(con);
         }
+    }
 }
 
-}
