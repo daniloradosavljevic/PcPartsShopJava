@@ -35,9 +35,39 @@ public class KorisnikService {
             return KorisnikDao.getInstance().find(username, con);
 
         } catch (SQLException ex) {
-            throw new DomaciException("Failed to find customer with username " + username, ex);
+            throw new DomaciException("Failed to find korisnik with username " + username, ex);
         } finally {
             ResourcesManager.closeConnection(con);
         }
     }
+     public void register(Korisnik korisnik) throws DomaciException {
+        Connection con = null;
+        try {
+            con = ResourcesManager.getConnection();
+
+            //more than one SQL statement to execute, needs to be a single transaction
+            con.setAutoCommit(false);
+            KorisnikDao.getInstance().register(korisnik, con);
+
+            con.commit();
+        } catch (SQLException ex) {
+            ResourcesManager.rollbackTransactions(con);
+            throw new DomaciException("Failed to add new korisnik " + korisnik, ex);
+        } finally {
+            ResourcesManager.closeConnection(con);
+        }
+    }
+     
+        public String login(String username, String password) throws DomaciException {
+        Connection con = null;
+        try {
+            con = ResourcesManager.getConnection();
+            return KorisnikDao.getInstance().login(username, password, con);
+        } catch (SQLException ex) {
+            throw new DomaciException("Login failed for username " + username, ex);
+        } finally {
+            ResourcesManager.closeConnection(con);
+        }
+}
+
 }

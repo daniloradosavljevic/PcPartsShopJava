@@ -6,5 +6,6 @@ poslovnedomaci\service\KorisnikService.class
 poslovnedomaci\dao\ResourcesManager.class
 poslovnedomaci\data\Proizvod.class
 poslovnedomaci\data\Kupovina.class
+poslovnedomaci\dao\ProizvodDao.class
 poslovnedomaci\rest\KorisnikRest.class
 poslovnedomaci\dao\KorisnikDao.class

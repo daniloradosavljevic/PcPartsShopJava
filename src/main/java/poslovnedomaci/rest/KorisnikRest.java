@@ -5,6 +5,8 @@
  */
 package poslovnedomaci.rest;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -23,7 +25,7 @@ import poslovnedomaci.service.KorisnikService;
  *
  * @author Coda
  */
-    @Path("korisnik")
+@Path("korisnik")
 public class KorisnikRest {
     
     private final KorisnikService korisnikService = KorisnikService.getInstance();
@@ -38,10 +40,23 @@ public class KorisnikRest {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addKorisnik(Korisnik korisnik) throws DomaciException{
-            //korisnikService.addNewKorisnik(korisnik);
+    public Response register(Korisnik korisnik) throws DomaciException{
+            korisnikService.register(korisnik);
             return Response.ok().build();
     }
+    @POST
+    @Path("/login")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN) // Vraća običan tekst
+    public Response login(Korisnik korisnik) throws DomaciException {
+        String result = korisnikService.login(korisnik.getUsername(), korisnik.getPassword());
+        if (result != null) {
+            return Response.ok(result).build(); 
+        }
+        return Response.status(Response.Status.UNAUTHORIZED).entity("Invalid username or password").build();
+    }
+
+
     
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)

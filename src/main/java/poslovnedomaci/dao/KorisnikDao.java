@@ -41,4 +41,46 @@ public class KorisnikDao {
         }
         return korisnik;
     }
+    public void register(Korisnik korisnik, Connection con) throws SQLException {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id = -1;
+        try {
+            ps = con.prepareStatement("INSERT INTO korisnik(ime_i_prezime,username, password, email, datum_rodjenja, stanje_racuna, kolicina_potrosenog_novca) VALUES(?,?,?,?,?,?,?)");
+            ps.setString(1, korisnik.getIme_i_prezime());
+            ps.setString(2, korisnik.getUsername());
+            ps.setString(3, korisnik.getPassword());
+            ps.setString(4, korisnik.getEmail());
+            ps.setString(5, korisnik.getDatum_rodjenja());
+            ps.setInt(6, korisnik.getStanje_racuna());
+            ps.setInt(7, korisnik.getKolicina_potrosenog_novca());
+            ps.executeUpdate();
+  
+        } finally {
+            ResourcesManager.closeResources(rs, ps);
+        }
+    }
+    
+    public String login(String username, String password, Connection con) throws SQLException{
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id;
+        String ime_i_prezime;
+        String full;
+        try {
+            ps = con.prepareStatement("SELECT korisnik_id, ime_i_prezime FROM korisnik WHERE username =? AND password = ?");
+            ps.setString(1,username);
+            ps.setString(2,password);
+            rs = ps.executeQuery();
+             if (rs.next()) {
+                 id = rs.getInt("korisnik_id");
+                 ime_i_prezime = rs.getString("ime_i_prezime");
+                 full = id + "," + ime_i_prezime;
+                 return full;
+        } 
+        } finally {
+            ResourcesManager.closeResources(rs, ps);
+        }
+        return null;
+    }
 }
