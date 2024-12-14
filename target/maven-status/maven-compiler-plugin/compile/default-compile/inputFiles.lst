@@ -1,7 +1,10 @@
 C:\Users\HP\Documents\NetBeansProjects\poslovnedomaci\src\main\java\poslovnedomaci\data\Korisnik.java
 C:\Users\HP\Documents\NetBeansProjects\poslovnedomaci\src\main\java\poslovnedomaci\data\Pretraga.java
 C:\Users\HP\Documents\NetBeansProjects\poslovnedomaci\src\main\java\poslovnedomaci\dao\ResourcesManager.java
+C:\Users\HP\Documents\NetBeansProjects\poslovnedomaci\src\main\java\poslovnedomaci\dao\KupovinaDao.java
+C:\Users\HP\Documents\NetBeansProjects\poslovnedomaci\src\main\java\poslovnedomaci\service\KupovinaService.java
 C:\Users\HP\Documents\NetBeansProjects\poslovnedomaci\src\main\java\poslovnedomaci\exception\DomaciException.java
+C:\Users\HP\Documents\NetBeansProjects\poslovnedomaci\src\main\java\poslovnedomaci\rest\KupovinaRest.java
 C:\Users\HP\Documents\NetBeansProjects\poslovnedomaci\src\main\java\poslovnedomaci\service\KorisnikService.java
 C:\Users\HP\Documents\NetBeansProjects\poslovnedomaci\src\main\java\poslovnedomaci\rest\ProizvodRest.java
 C:\Users\HP\Documents\NetBeansProjects\poslovnedomaci\src\main\java\poslovnedomaci\data\PodesavanjePretrage.java

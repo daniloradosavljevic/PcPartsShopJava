@@ -29,6 +29,7 @@ public class KorisnikDao {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Korisnik korisnik = null;
+        
         try {
             ps = con.prepareStatement("SELECT * FROM korisnik where username=?");
             ps.setString(1, username);
@@ -56,6 +57,21 @@ public class KorisnikDao {
             ps.setInt(7, korisnik.getKolicina_potrosenog_novca());
             ps.executeUpdate();
   
+        } finally {
+            ResourcesManager.closeResources(rs, ps);
+        }
+    }
+    
+     public void update(Korisnik korisnik, Connection con) throws SQLException {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        int id = -1;
+        try {
+            ps = con.prepareStatement("UPDATE korisnik set stanje_racuna = ? , kolicina_potrosenog_novca = ? WHERE username=?");
+            ps.setInt(1, korisnik.getStanje_racuna());
+            ps.setInt(2, korisnik.getKolicina_potrosenog_novca());
+            ps.setString(3, korisnik.getUsername());
+            ps.executeUpdate();
         } finally {
             ResourcesManager.closeResources(rs, ps);
         }

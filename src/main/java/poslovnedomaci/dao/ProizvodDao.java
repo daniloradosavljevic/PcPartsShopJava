@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import poslovnedomaci.data.Korisnik;
 import poslovnedomaci.data.Pretraga;
 import poslovnedomaci.data.Proizvod;
 import poslovnedomaci.exception.DomaciException;
@@ -98,5 +99,18 @@ public class ProizvodDao {
             ResourcesManager.closeResources(rs, ps);
         }
         return proizvod;
+    }
+    
+     public void update(Proizvod proizvod, Connection con) throws SQLException {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            ps = con.prepareStatement("UPDATE proizvod set stanje_na_lageru = ? WHERE naziv=?");
+            ps.setInt(1, proizvod.getStanje_na_lageru());
+            ps.setString(2, proizvod.getNaziv());
+            ps.executeUpdate();
+        } finally {
+            ResourcesManager.closeResources(rs, ps);
+        }
     }
 }
