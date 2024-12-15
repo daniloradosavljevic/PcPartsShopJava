@@ -2,7 +2,7 @@
 
 Homework made for Faculty Of Engineering, University of Kragujevac class Designing of bussines applications, featuring REST API backend implementation in Java using JAX-RS.
 
-## Homework description:
+## Homework description
 Here is the official homework description for this project provided by professor [Milan Cabarkapa](https://github.com/milancabarkapa).
 > "It is necessary to develop a REST API in the Java programming language (following the examples from the exercises). 
 The service server application that will be the backend for the user application that needs to enable 
