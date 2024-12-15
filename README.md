@@ -17,7 +17,7 @@ product that could not fit into a short view in the list."
 ## How-to-run instructions
 In order to be able to run this project, you will need to complete next steps:
 - Make sure that you have **Xamp**, **GlassFish**, **Postman** and **Netbeans** (or your preferred Java IDE) installed.
-- Clone this repository using ``` git clone https://github.com/daniloradosavljevic/PcPartsShopJava.git ```.
+- Clone this repository using ``` git clone git@github.com:daniloradosavljevic/PcPartsShopJava.git ```.
 - Open **Xamp** and run **Apache** and **MySQL**.
 - Open ``` localhost/phpmyadmin ``` and go to import tab in order to import **mydb.sql** database for this project.
 - Open **Netbeans** (or your preferred IDE), compile and run the project in order to deploy the backend.
